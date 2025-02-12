@@ -1,0 +1,415 @@
+/*
+.(variable){} is to style a class.
+a class is a group of elements
+
+#(variable){} is to style an ID
+ID is given to only one element.
+
+(variable){} a variable with nothing is to style all of that type of element.
+for example
+button{} will style all buttons in that page.
+
+(variable) (variable){} will style all the childs inside of a parent element.
+  parent      child
+for example
+#navbar-links a{} will style all the list items inside the Unordered list with ID of "navbar-links"
+
+(variable) > variable{} will style all of the childs that are DIRECT ASCNEDENT of parent directly.
+meaning if the child is inside another tag i will not be effected.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 12pt;
+    font-family: Poppins;
+    overflow: scroll;
+    overflow-y: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.container {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+    position: relative;
+    z-index: 1;
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+
+nav{
+    position: sticky;
+    top: 0;
+    height: 60px;
+    background-color: rgb(45, 93, 182);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.links-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a{
+    background: linear-gradient(to right, rgb(0, 217, 255), rgb(0, 0, 255));
+    background-size: 0%;
+    background-repeat: no-repeat;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: all ease 1s;
+    border-radius: 15px;
+}
+
+nav a:hover{
+    background-size: 100%;
+    transition: all ease 0.s;
+}
+
+.material-symbols-outlined{
+    color: white;
+    margin-right: auto;
+}
+
+#sidebar-active{
+    display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button{
+    display: none;
+}
+
+@media(max-width: 560px){
+    .links-container{
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        background-color: rgb(45, 93, 182);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.5s ease-in-out;
+        z-index:10;
+    }
+    nav a{
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+    .open-sidebar-button, .close-sidebar-button{
+        display: block;
+        padding: 20px;
+    }
+    #sidebar-active:checked ~ .links-container{
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay{
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        background: rgba(255, 255, 255, 0.2);
+        transition: 1s ease-in-out;
+    }
+
+}
+/* -------------------------------------------------------------------------------------------------- */
+
+#WelcometoVON{
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;   
+    flex-wrap: wrap; 
+    overflow-y: scroll;
+}
+
+#Welcomemsg{
+    transition: all ease 1s;
+    color: rgb(45, 93, 182);
+    position: relative;   
+    z-index:1;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+}
+
+
+
+#Welcomemsg::after{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 100%;
+    background: linear-gradient(to right, rgb(0, 217, 255), rgb(0, 0, 255));
+    bottom: 0;
+    left: 0;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+
+#Welcomemsg:hover::after{
+    width: 0;
+}
+
+#Welcomemsg:hover{
+    transition: all ease 1s;
+    color: rgb(30, 62, 122);
+}
+
+#Welcome-buttons {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    animation-name: fadein;
+    animation-duration: 1s;
+}
+
+#Welcome-buttons button{
+    height: 50px;
+    width: 150px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: rgb(45, 93, 182);
+    position: relative;
+    z-index: 1;
+}
+
+#Welcome-buttons button::before{
+    content: '';
+    height: 50px;
+    width: 0px;
+    border-radius: 30px;
+    background-image: linear-gradient(to right, rgb(0, 217, 255), rgb(0, 0, 255));
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    transition: 0.5s ease-in-out;
+}
+
+#Welcome-buttons button:hover::before{
+    width: 150px;
+    transform: scale(1.1);
+}
+
+#Welcome-buttons button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+#Joinus{
+    background-color: rgb(45, 93, 182);
+    color: white;
+    text-align: center;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;   
+    overflow-y: scroll;
+}
+
+#Joinus h1{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#Joinus h2{
+    padding-left: 50px;
+}
+
+#Sign-Button{
+    padding-top: 50px;
+}
+
+#JoinusSignup{
+    transition: top ease 0.5s;
+    color: rgb(45, 93, 182);
+    text-decoration: none;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: all ease 0.5s;
+}
+
+#JoinusSignup:hover{
+    top: -10px;
+    transition: all ease 0.5s;
+    background-color: rgb(194, 194, 194);
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+#Notconvinced{
+    color: rgb(45, 93, 182);
+    align-items: center;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;   
+    overflow-y: scroll;
+}
+
+#Reviews::-webkit-scrollbar {
+    width: 10px;
+}
+#Reviews::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+#Reviews::-webkit-scrollbar-thumb {
+    background: rgb(45, 93, 182); 
+    border-radius: 10px;
+}
+#Reviews::-webkit-scrollbar-thumb:hover {
+    background: rgb(30, 62, 122);
+}
+
+#Reviews{
+    display: flex;
+    gap: 20px;
+    width: 400px;
+    height: 400px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.review{
+    scroll-snap-align: center;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 400px;
+
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+#Aboutus{
+    background-color: rgb(45, 93, 182);
+    color: white;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;   
+    overflow-y: scroll;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+
+#Contactus{
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    height: 94vh;
+    overflow-y: scroll;
+}
+
+input[type=text], textarea, [type=number], [type="email"] {
+    padding: 10px;
+    border: 1px solid rgb(45, 93, 182);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: none;
+  }
+
+  input[type=submit] {
+    background-color: rgb(45, 93, 182);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all ease 0.5s;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: rgb(30, 62, 122);
+    transition: all ease 0.5s;
+  }
+
+  #contactusform{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
+    padding-right: 50px;
+  }
+
+  iframe{
+    border-radius: 25px;
+    border: 5px solid rgb(45, 93, 182);
+    width: 300px;
+    height: 300px;
+    transition: 0.3s ease-in-out;
+    opacity: 0.6;
+  }
+
+  iframe:hover{
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    opacity: 1;
+  }
+  

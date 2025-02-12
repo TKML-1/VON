@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VON</title>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    </head>
+<body>
+    <nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <span class="material-symbols-outlined">menu</span>
+        </label>
+        <label id="overlay" for="sidebar-active"></label>
+        <div class="links-container">
+            <label for="sidebar-active" class="close-sidebar-button">
+                <span class="material-symbols-outlined">Close</span>
+            </label>
+            <a href="#WelcometoVON">Home</a>
+            <a href="#Joinus">Why join</a>
+            <a href="#Notconvinced">Reviews</a>
+            <a href="#Aboutus">About Us</a>
+            <a href="#Contactus">Contact Us</a>
+        </div>
+    </nav>
+    <div class="container">
+    <header id="WelcometoVON">
+            <h1 style="text-align: center" id="Welcomemsg">
+                Welcome to VON, Virtue Online Banking. <br>
+                Our Website offers the ultimate solution for online banking.
+            </h1>
+            <div id="Welcome-buttons">
+                <button onclick="window.location.href='signup.html'">Sign up</button>
+                <button onclick="window.location.href='login.html'">Log in</button>
+            </div>
+    </header>
+    <section id="Joinus">
+            <h1>
+                why join us?
+            </h1>
+            <h2 style="text-align: left">
+                Our Website was desigen for the best experience for the user 
+                together with the best security for the users privacy and content information.
+                Along with the technical perfections of our Online bank we also offers the best rates, far greater than other banks. for example:
+                <ul id="Rates">
+                    <li>Low interest rates on loans.</li>
+                    <li>High interest rates on investments.</li>
+                    <li>Both Long-term and Short-term investments with frequent exit windows.</li>
+                    <li>No fees on purchases made with credit cards.</li>
+                    <li>Zero reacurring bills on credit cards.</li>
+                    <li>Completely free account creation.</li>
+                    <li>No managing fee on account.</li>
+                    <li>24/7 Human customer support.</li>
+                    <li>And much more!</li>
+                </ul>
+                convinced? Of course you are! We offer so many benefits with no down sides!
+            </h2>
+            <div id="Sign-Button">
+                <a href="signup.html" id="JoinusSignup" >Click here to sign up!</a>
+            </div>
+    </section>
+    <section id="Notconvinced">
+        <p id="NotconvincedP">
+            <h2 style="text-align: center">
+                Not convinced yet??? <br>
+                Check out what these users have said about our Website!
+            </h2>
+            <div id="Reviews">
+                <img src="images/review 1.png" class="review">
+                <img src="images/review 2.png" class="review">
+                <img src="images/review 3.png" class="review">
+                <img src="images/review 4.png" class="review">
+                <img src="images/review 5.png" class="review">
+            </div>
+        </p>
+    </section>
+    <section id="Aboutus">
+        <p id="About us P">
+            <h1 id="About us h1">
+                About us
+            </h1>
+            <h2 id="About us h2">
+                VON was created back in 48 B.C when the Roman emperor Julius Caesar didn't know where to put all his money
+                so we offered him the ultimate solution, he then became our first customer and our best investments asset to date.
+            </h2>
+            <span id="Offers">
+                <img src="">
+                <img src="">
+                <img src="">
+                <img src="">
+            </span>
+        </p>
+    </section>
+    <footer id="Contactus">
+        <h4 id="Contact us h4">
+            <br>
+        Contact us!<br>
+        Phone: 100 <br>
+        Location: Washington, DC 20500 <br>
+        Whatsapp: No. :) <br> 
+        Gmail: mendellamas15@gmail.com<br> <br> 
+        </h4>
+            <section id="contactusform">
+                <form action="https://formsubmit.co/mendellamas15@gmail.com" method="POST">
+                    <label for="fname">First name</label><br>
+                    <input type="text" id="fname" name="fname" placeholder="First name" required><br>
+                    <label for="lname">Last name</label><br>
+                    <input type="text" id="lname" name="lname" placeholder="Last name" required><br>
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" placeholder="Email" required><br>
+                    <label for="phone">Phone number</label><br>
+                    <input type="number" id="phone" name="phone" placeholder="Phone number" required><br>
+                    <label for="message">Message</label><br>
+                    <textarea id="message" name="message" placeholder="Write here" style="height: 200px; width: 400px;"></textarea><br>
+                    <input type="submit" value="submit">
+                </form>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.8022734996316!2d34.794442623704235!3d32.074596273965014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b996dbcbc69%3A0x9488832521f311a6!2z16fXoNeZ15XXnyDXoteW16jXmdeQ15zXmQ!5e0!3m2!1siw!2sil!4v1736654719870!5m2!1siw!2sil" 
+                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+        <div id="Copyright">&copy; Copyright 2025, All Rights Reserved VON.inc</div>
+    </footer>
+    </div>
+</body>
+</html>

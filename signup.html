@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Signup</title>
+		<link rel="stylesheet" href="signup.css">
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<form name="SignUp" id="Signup" method="POST" action="register.php" onsubmit="ValidateForm(event)">
+				<h1>
+					Signup
+				</h1>
+				<div id="error">
+					
+				</div>
+				<div class="input-box">
+					<input id="Username" name="Username" type="text" placeholder="Username" required>
+				</div>
+				<div class="input-box">
+					<input id="Email" name="Email" type="text" placeholder="Email" required>
+				</div>
+				<div class="input-box">
+					<input id="Password" name="Password" type="password" placeholder="Password" required>
+				</div>
+				<button type="submit" value="SignUp" class="btn" name="SignUp">Signup</button>
+				<ul>
+					<li>Username can't contain numbers or spaces.</li>
+					<li>Username must be at least 4 characters long.</li>
+					<li>Password must contain at least one number.</li>
+					<li>Password must contain at least one special character.</li>
+					<li>Password must be at least 8 characters long.</li>
+				</ul>
+				<div class="register-link">
+					<p>Already have an account? <a href="login.html">Login</a></p>
+				</div>
+			</form>
+		</div>
+		<script>
+			function ValidateForm(event){
+        		let user = document.forms["SignUp"]["Username"].value;
+				let mail = document.forms["SignUp"]["Email"].value;
+				let pass = document.forms["SignUp"]["Password"].value;
+				const messages = [];
+				if (/\d|\s/.test(user)) {
+					messages.push("Invalid Username.");
+				}
+				if (user.length < 4) {
+					messages.push("Username too short.");
+				}
+				if (pass.length < 8) {
+					messages.push("Password too short.");
+				}
+				if (/\d|[\!\@\#\$\%\&\*\~\_\-]/gi.test(pass)) {}
+				else {
+					messages.push("Invalid Password.");
+				}
+				if (mail.includes('@')){}
+				else {
+					messages.push("Invalid Email.");
+				}
+				if (messages.length > 0){
+					event.preventDefault();
+					document.getElementById("error").textContent = messages.join('\n');
+				}
+    		}
+		</script>
+	</body>
+</html>
